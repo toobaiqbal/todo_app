@@ -15,7 +15,7 @@
  */
 
 $white_opaque: rgba(250, 250, 250, .3);
-$dark: #1F7972;
+$dark: #003f3f;
 
 * {
   box-sizing: border-box;
@@ -26,11 +26,11 @@ html {
 
 body {
   height: 100%;
-  background: -webkit-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:    -moz-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:     -ms-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:      -o-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:         linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background: -webkit-linear-gradient(40deg, #1F7972 100%,  #1F7972 100%);
+  background:    -moz-linear-gradient(40deg, #1F7972 100%,  #1F7972 100%);
+  background:     -ms-linear-gradient(40deg, #1F7972 100%,  #1F7972 100%);
+  background:      -o-linear-gradient(40deg, #1F7972 100%,  #1F7972 100%);
+  background:         linear-gradient(40deg, #1F7972 100%,  #1F7972 100%);
   font-family: 'Lato', sans-serif;
 }
 
@@ -67,11 +67,11 @@ body {
   font-weight: 700;
   font-size: 2.5rem;
   text-transform: uppercase;
-  color: white;
+  color: $dark;
   margin: 0;
   a {
     text-decoration: none;
-    color: white;
+    color: $dark;
     transition: all .4s ease-in-out;
     &:hover {
       opacity: 0.4;
@@ -212,3 +212,31 @@ input[type="submit"] {
   }
 }
 ::-webkit-input-placeholder { color: $dark; }
+
+.topnav {
+  overflow: hidden;
+  background_color: -webkit-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+}
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.method-heading{
+  font-size: medium;
+  font-family: arial, sans-serif;
+  color: white;
+
+
+}

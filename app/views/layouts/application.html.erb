@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Todo</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  </head>
+<head>
+  <title>Todoapp</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
 <body>
-
-
+<div class="topnav">
+  <% if user_signed_in? -%>
+    <ul class="nav navbar-nav navbar-right">
+      <%= link_to 'Account', edit_user_registration_path %>
+      <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+    </ul>
+  <% else -%>
+    <ul class="nav navbar-nav pull-right">
+      <%= link_to 'Sign up', new_user_registration_path %>
+      <%= link_to 'Sign in', new_user_session_path %>
+    </ul>
+  <% end -%>
+</div>
 <div class="container">
-    <%= yield %>
-  </div>
-
-  </body>
-  </html>
+  <%= yield %>
+</div>
+</body>
+</html>

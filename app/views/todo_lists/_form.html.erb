@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+  <% if user_signed_in? %>
 
   <div class="field">
     <%= form.label :title %>
@@ -25,3 +26,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+<%end  %>
