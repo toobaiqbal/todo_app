@@ -10,19 +10,8 @@
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="topnav">
-  <% if user_signed_in? -%>
-    <ul class="nav navbar-nav navbar-right">
-      <%= link_to 'Account', edit_user_registration_path %>
-      <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
-    </ul>
-  <% else -%>
-    <ul class="nav navbar-nav pull-right">
-      <%= link_to 'Sign up', new_user_registration_path %>
-      <%= link_to 'Sign in', new_user_session_path %>
-    </ul>
-  <% end -%>
-</div>
+<%= render 'layouts/navigation' %>
+
 <div class="container">
   <%= yield %>
 </div>

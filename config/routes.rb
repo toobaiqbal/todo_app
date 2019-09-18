@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users
   resources :todo_lists do
   resources :todo_items do
@@ -12,9 +11,7 @@ Rails.application.routes.draw do
     end
   end
 
-
 root "todo_lists#index"
   root to: "home#index"
-
 
 end

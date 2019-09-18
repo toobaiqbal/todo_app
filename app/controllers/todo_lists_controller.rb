@@ -4,13 +4,15 @@ class TodoListsController < ApplicationController
   # GET /todo_lists
   # GET /todo_lists.json
   def index
-    @todo_lists = TodoList.all
+    @todo_lists = TodoList.where(:user_id => current_user.id)
   end
 
   # GET /todo_lists/1
   # GET /todo_lists/1.json
   def show
   end
+
+
 
   # GET /todo_lists/new
   def new
@@ -25,7 +27,7 @@ class TodoListsController < ApplicationController
   # POST /todo_lists.json
   def create
     @todo_list = TodoList.new(todo_list_params)
-
+    @todo_list.user = current_user
     respond_to do |format|
       if @todo_list.save
         format.html { redirect_to @todo_list, notice: 'Todo list was successfully created.' }
